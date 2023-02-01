@@ -4,7 +4,7 @@
  * @Author: maoyueer
  * @Date: 2022-12-09 16:21:25
  * @LastEditors: maoyueer
- * @LastEditTime: 2023-02-01 10:19:46
+ * @LastEditTime: 2023-02-01 11:07:26
  */
 const history = require('connect-history-api-fallback');
 const webpackDevMiddleware = require("webpack-dev-middleware")
@@ -79,8 +79,8 @@ app.use('/',calculationRouter);
 var userModel = require('./models/user')
 // Set up mongoose connection
 var mongoose = require('mongoose');
-var dev_db_url = 'mongodb://root:fhznmongo@47.110.63.208:8081/algorithmicUser?authSource=admin';
-// var dev_db_url = 'mongodb://localhost:27017/algorithmic_database';
+
+var dev_db_url = 'mongodb://localhost:27017/algorithmic_database';
 mongoose.set('strictQuery', true);
 mongoose.connect(dev_db_url, { useNewUrlParser: true }, (err, res) => {
   if (!err) {
