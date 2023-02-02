@@ -4,7 +4,7 @@
  * @Author: maoyueer
  * @Date: 2023-01-12 17:07:52
  * @LastEditors: maoyueer
- * @LastEditTime: 2023-01-30 14:24:18
+ * @LastEditTime: 2023-02-01 14:47:33
  */
 const { merge } = require('webpack-merge');
 const baseConfig = require('./webpack.config.js');
@@ -20,8 +20,7 @@ module.exports = merge(baseConfig, {
   },
   devServer: {
     open: true,
-    host: '127.0.0.1',
-    port: 5001,
+    port: 8080,
     client: {
       logging: 'none',
     },

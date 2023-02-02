@@ -4,7 +4,7 @@
  * @Author: maoyueer
  * @Date: 2023-01-12 17:28:10
  * @LastEditors: maoyueer
- * @LastEditTime: 2023-01-30 13:51:09
+ * @LastEditTime: 2023-02-02 13:38:09
  */
 
 import { createRouter, createWebHistory } from 'vue-router'
@@ -13,7 +13,7 @@ const router = createRouter({
   history: createWebHistory(),     //路由模式
   routes:[
     {
-      name: 'a',
+      name: 'index',
       path: '/',
       component: () => import('../views/homeA.vue')
     },
@@ -26,6 +26,11 @@ const router = createRouter({
       name: 'b',
       path: '/b',
       component: () => import('../views/homeB.vue')
+    },
+    {
+      path: "/calculationNode",
+      name: "calculationNode",
+      component:() => import('../views/CalculationNodeView.vue')
     },
   
   ]

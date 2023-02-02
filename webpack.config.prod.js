@@ -4,7 +4,7 @@
  * @Author: maoyueer
  * @Date: 2023-01-12 17:08:07
  * @LastEditors: maoyueer
- * @LastEditTime: 2023-01-13 11:22:11
+ * @LastEditTime: 2023-02-02 16:27:14
  */
 const path = require('path');
 const { merge } = require('webpack-merge');
@@ -18,7 +18,7 @@ module.exports = merge(baseConfig, {
     rules: [
       {
         test: /\.css|scss|less|sass$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [MiniCssExtractPlugin.loader,'style-loader', 'css-loader', 'sass-loader']
       },
     ]
   },
