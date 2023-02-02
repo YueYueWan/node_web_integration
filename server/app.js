@@ -4,26 +4,26 @@
  * @Author: maoyueer
  * @Date: 2022-12-09 16:21:25
  * @LastEditors: maoyueer
- * @LastEditTime: 2023-02-01 11:07:26
+ * @LastEditTime: 2023-02-01 14:59:31
  */
 const history = require('connect-history-api-fallback');
-const webpackDevMiddleware = require("webpack-dev-middleware")
+// const webpackDevMiddleware = require("webpack-dev-middleware")
 const webpack = require("webpack")
 const bcrypt = require('bcrypt')
 const dtime = require('time-formater');
 var express = require('express');
 var createError = require('http-errors');//处理错误中间件。
-const webpackConfig = require('../node_web_integration/webpack.config.dev.js')
+// const webpackConfig = require('../node_web_integration/webpack.config.dev.js')
 var path = require('path');
 var cookieParser = require('cookie-parser');//用于解析 cookie 头来填充 req.cookies（提供了访问 cookie 信息的便捷方法)
 var logger = require('morgan');//node 专用 HTTP 请求记录器中间件
 var async = require('async') //引入async
 var app = express();
-DIST_DIR = path.join(__dirname, "../dist"),// 设置静态访问文件路径
-complier = webpack(webpackConfig) 
-app.use(webpackDevMiddleware(complier, {
-  publicPath: webpackConfig.output.publicPath,
-}))
+// DIST_DIR = path.join(__dirname, "../dist"),// 设置静态访问文件路径
+// complier = webpack(webpackConfig) 
+// app.use(webpackDevMiddleware(complier, {
+//   publicPath: webpackConfig.output.publicPath,
+// }))
 // app.use(history());
 // app.use('/', history());
 // app.use(express.static(__dirname+'../dist/',{index : "index.html"}));

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknode_web_integration=self.webpackChunknode_web_integration||[]).push([[59],{59:function(e,n,t){t.r(n),t.d(n,{default:function(){return o}});var u=t(6252),o={__name:"homeA",setup(e){return(0,u.bv)((()=>{console.log("A页面渲染了")})),(e,n)=>((0,u.wg)(),(0,u.iD)("div",null," A "))}}}}]);
