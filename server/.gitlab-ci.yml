@@ -1,0 +1,31 @@
+variables:
+  NPM_REGISTRY: http://101.68.65.182:60003/repository/npm-proxy/
+  TAG: $CI_COMMIT_SHORT_SHA
+  BRANCH: $CI_COMMIT_REF_NAME
+  IMAGE_PROJECT: base
+  IMAGE_NAME: calculationdetection-backend
+
+  
+stages:
+  - pushimage
+
+    
+pushimage:
+  stage: pushimage
+  variables:
+    #DOCKER_TLS_CERTDIR: "/certs"
+    #DOCKER_HOST: tcp://docker:2375
+  image: harbor.fhzny.com:60002/public/docker:20.10.21-dind
+  #services:
+    #- name: harbor.fhzny.com:60002/public/docker:18.09.9
+      #alias: docker
+  tags: 
+    - local_runner
+  script:
+    - date
+    - sed -i 's#http://10.0.40.71:5001#http://detect-server:5001#g' ./controllers/caculationController.js
+    - dockerd &
+    - sleep 10
+    - docker login harbor.fhzny.com:60002 -u admin -p Fhzn@34#$
+    - docker build -t harbor.fhzny.com:60002/$IMAGE_PROJECT/$IMAGE_NAME:$TAG ./
+    - docker push harbor.fhzny.com:60002/$IMAGE_PROJECT/$IMAGE_NAME:$TAG
